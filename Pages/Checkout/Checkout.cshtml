@@ -1,0 +1,15 @@
+﻿@page
+@model BurgerOrderApp.Pages.Checkout.CheckoutModel
+@{
+    ViewData["Title"] = "Your Order!";
+}
+<h1>@ViewData["Title"]</h1>
+<div class="align-content-center">
+    <div class="col-3 mx-auto mb-5">
+        <img src="https://free-png.ru/wp-content/uploads/2021/05/free-png.ru-55-340x340.png" width="250px" />
+        <h5 class="mt-5">Your order @Model.ForWhomBurger is ready</h5>
+        <h5>Totally price is: @Model.BurgerPrice$</h5>
+        <br/>
+        <a class="btn alert-primary mt-1 mx-auto" asp-area="" asp-page="ThanksPage">Confirm your order</a>
+    </div>
+</div>
