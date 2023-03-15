@@ -1,0 +1,41 @@
+﻿@page
+@model BurgerOrderApp.Pages.Forms.CustomBurgerModel
+@{
+}
+<div class="text-center container">
+    <h3 >Create Your Own Burger</h3>
+    <form method="post" class="mx-auto mt-5 mb-5 px-5 pt-5 rounded-5 col-4">
+        <input type="text" asp-for="Burgers.ForWhomBurger" placeholder="For whom this Burger"/>
+        <br />
+        <input type="checkbox" asp-for="Burgers.BeefMince" />Beef Mince
+        <br/>
+        <input type="checkbox" asp-for="Burgers.LeanBeefMince" />Lean Beef Mince
+        <br />
+        <input type="checkbox" asp-for="Burgers.Mushrooms" />Mushrooms
+        <br />
+        <input type="checkbox" asp-for="Burgers.Onions" />Onions
+        <br />
+        <input type="checkbox" asp-for="Burgers.Pineapple" />Pineapple
+        <br />
+        <input type="checkbox" asp-for="Burgers.Rosemary" />Rosemary
+        <br />
+        <input type="checkbox" asp-for="Burgers.Tomatoes" />Tomatoes
+        <br/>
+        <input type="checkbox" asp-for="Burgers.Cucumbers" />Cucumbers
+        <br />
+        <input type="checkbox" asp-for="Burgers.CheeseCheader" />Cheese Cheader
+        <br/>
+        <input type="checkbox" asp-for="Burgers.CheeseFeta" />Cheese Feta
+        <br/>
+        <input type="checkbox" asp-for="Burgers.CheeseMozzarella" />Cheese Mozzarella
+        <br />
+        <input type="checkbox" asp-for="Burgers.BBQSauce" />BBQ Sauce
+        <br/>
+        <input type="checkbox" asp-for="Burgers.TomatoSauce" />Tomato Sauce
+        <br />
+        <input type="checkbox" asp-for="Burgers.GreenPestoSauce" />Green Pesto Sauce
+        <br/>
+
+        <button class="btn btn-primary mt-1" type="submit" asp-area="" asp-page="Checkout/ThanksPage">Order My Burger</button>
+    </form>
+</div>
