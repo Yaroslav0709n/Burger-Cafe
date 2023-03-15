@@ -1,0 +1,40 @@
+﻿@page
+@model PrivacyModel
+@{
+    
+}
+<h1>@ViewData["Title"]</h1>
+
+<h2>Orders</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Burger Name
+            </th>
+            <th>
+                Burger Price
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var order in Model.burgerOrders)
+        {
+            <tr>
+                <td>
+                    @order.Id
+                </td>
+                <td>
+                    @order.BurgerName
+                </td>
+                <td>
+                    @order.BurgerPrice
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>

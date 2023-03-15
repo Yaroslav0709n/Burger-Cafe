@@ -1,0 +1,41 @@
+﻿@page
+@model BurgerOrderApp.Pages.BurgerModel
+@{
+}
+@*<a class="nav-link text-dark" asp-area="" asp-page="Forms/CustomBurger">CustomBurger</a>
+<a class="nav-link text-dark" asp-area="" asp-page="Checkout/Checkout">Checkout</a>*@
+
+<div >
+    <div class="text-center">
+        <div class="mainText">
+            <h1 class="display-4">Burgers</h1>
+            <h2 class="display-4">Choose your burger</h2>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 mb-5 mt-5">
+                    <div class="w-100 row makeOwnDiv">
+                        <div class="col-4">
+                            <img class="w-100" src="https://www.freepnglogos.com/uploads/burger-png/burger-png-png-images-yellow-images-12.png" />
+                        </div>
+                        <div class="col-8 alig-items-center">
+                            <div class="align-middle makeOwnText">
+                                <h3 style="text-align:left;">Create your own burger</h3>
+                                <a class="btn btn-primary mt-3" style="float:left" asp-area="" asp-page="Forms/CustomBurger">Create</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @foreach (var burgerItem in Model.BurgerDB)
+                {
+                    var image = burgerItem.BurgerImage;
+                    <div class="col-4 mb-5">
+                        <img src="@image" class="w-100" asp-append-version="true" />
+                        <p style="font-size: 20px; ">@burgerItem.ForWhomBurger</p>
+                        <a class="btn btn-primary" asp-area="" asp-page="Checkout/Checkout" asp-route-BurgerPrice="@burgerItem.BurgerPrice" asp-route-ForWhomBurger="@burgerItem.ForWhomBurger">Order This Burger</a>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
